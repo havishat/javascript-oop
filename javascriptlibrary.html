@@ -1,0 +1,48 @@
+<html>
+<head>
+    <div id="message">
+        Java Script Libaray
+    </div> 
+</head>
+<body>
+    <script>
+        const funcLibrary = {
+        map: function(array, callback) {
+        for (let i = 0; i < array.length; i++) {
+            array[i] = callback(array[i]);
+        }
+        },
+
+        filter: function(array, callback) {
+            var newarray = []
+            for (let i = 0; i < array.length; i++) {
+                if(callback(array[i])) {
+                    newarray.push(array[i])
+                }
+            }
+            return newarray
+        },
+
+        reduce: function(array, callback, memo){
+             
+        }
+        },
+
+
+        function even(num) {
+            return num % 2 == 0;
+        }
+        
+        const array1 = [1, 2, 3, 4, 5, 6];
+
+
+        funcLibrary.filter(array1, even)
+        console.log(funcLibrary.filter(array1, even))
+
+
+        
+
+        
+    </script>
+</body>
+</html>

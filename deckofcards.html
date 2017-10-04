@@ -1,0 +1,75 @@
+<html>
+<head>
+    <div id="message">
+        deckofcards
+    </div> 
+</head>
+<body>
+    <script>
+        class Deck {
+            constructor() {
+                this.deck = [];
+                this.reset
+                this.shuffle
+            }
+
+            reset() {
+                this.deck = [];
+                const suits = ['Clubs', 'Hearts', 'Diamonds', 'Spades'];
+                const pips = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+
+                for (const suit of suits) {
+                    for (const pip of pips) {
+                       this.deck.push(`${ pip } of ${ suit }`);
+                    }
+                }
+
+                return this;
+                
+            }
+
+            shuffle() {
+                var m = this.deck.length, t, i;
+
+                // While there remain elements to shuffle…
+                while (m) {
+
+                // Pick a remaining element…
+                i = Math.floor(Math.random() * m--);
+
+                // And swap it with the current element.
+                t = this.deck[m];
+                this.deck[m] = this.deck[i];
+                this.deck[i] = t;
+                }
+
+                return this;
+            }
+
+            deal() {
+                return this.deck.pop();
+            }
+
+        }
+        const deck1 = new Deck();
+      deck1.reset().shuffle().deal()
+      console.log(deck1)
+
+        class Player{
+            constructor(name){
+                this.name = name
+                this.hand = []
+                this.playerhand
+            }
+            playerhand(deck) {
+                this.hand.push(deck.deal())
+                return this
+            }
+        }
+
+        let player1 = new Player("havi")
+        console.log(player1.playerhand(deck1).playerhand(deck1).playerhand(deck1).playerhand(deck1))
+        console.log(deck1)
+    </script>
+</body>
+</html>
